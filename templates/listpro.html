@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: 15px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .card button:hover {
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center">Product Cards</h2>
+
+<div class="card-container">
+  {% for i in x %}
+    <div class="card">
+      <img src="/media/{{i.image}}" alt="{{i.fname}}">
+      <h1>{{i.fname}}</h1>
+      <p class="price">{{i.price}}</p>
+      <p>{{i.breed}}</p>
+      <p>{{i.description}}</p>
+      <p><button><a href="/cart/{{i.id}}">Add To Cart</a></button></p>
+    
+    <a href="/payment/" class="buy-now">
+      <!--p><button>Buy Now</button></p--></a>
+    </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>

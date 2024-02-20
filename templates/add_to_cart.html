@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: 15px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .card button:hover {
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center">Product Cards</h2>
+
+<div class="card-container" >
+    <form action="/add_to_cart/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+    <div class="card">
+      <img src="/media/{{image}}" name="image" alt="fish image">
+      <input type="hidden" name="image" value="{{image}}"/>
+      <h1><input type="text" name="fname" value="{{fishname}}"></h1>
+      <p class="price"><input type="text" name="price" value="{{price}}"></p>
+      <!-- <p><input type="text" name="quantity" value="{{quantity}}"></p> -->
+      <p><input type="text" name="description" value="{{description}}"></p>
+
+      {{name}}
+      {{mobile}}
+      <!-- <p><button><a href="/cart/{{i.id}}">Add To Cart</a></button></p> -->
+      <p><button type="submit">Confirm Cart</button></p>
+    </div>
+ 
+</div>
+
+</body>
+</html>

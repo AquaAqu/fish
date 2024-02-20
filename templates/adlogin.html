@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+    <!-- <script>
+        function login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // Check if admin credentials are correct
+    if (username === "admin" && password === "LIBELELA") {
+        // Redirect to the main page or perform other actions
+        alert("Login successful! Redirecting...");
+    } else {
+        alert("Invalid credentials. Please try again.");
+    }
+}
+
+    </script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LIBELELA English Services</title>
+</head>
+<body>
+    <div id="login-container">
+        <!-- Login form for admin -->
+        <form action="/adlogin/" method="post" id="login-form">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="name" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Login" style="color: #45a049;">
+        </form>
+    </div>
+
+    <!-- Other sections and forms can be added here -->
+
+    <script src="script.js"></script>
+</body>
+</html>

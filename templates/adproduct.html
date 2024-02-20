@@ -1,0 +1,88 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<form action="/adproduct/" method="post" class="form-horizontal" enctype="multipart/form-data">
+  {% csrf_token %}
+<fieldset>
+
+<!-- Form Name -->
+<h2><center>SHOP</center></h2>
+
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_name">FISH NAME</label>  
+  <div class="col-md-4">
+  <input id="product_name" name="fname" placeholder="FISH NAME" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_name_fr">DESCRIPTION</label>  
+  <div class="col-md-4">
+  <input id="product_name_fr" name="description" placeholder="DESCRIPTION" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="breed">FISH BREED</label>
+  <div class="col-md-4">
+    <select id="breed" name="breed" class="form-control">
+      <option value="">--Please Select--</option>
+      <option value="arowanas">Osteoglosside</option>
+      <option value="africancichilds">African Cichilds</option>
+      <option value="beta">Osphronemidea</option>
+      <option value="barbs">Cyprinidae</option>
+      <option value="bichirs">Polypteridae</option>
+      <option value="corycatfish">Callichthyidae</option>
+      <option value="danios">Cyprinidae</option>
+      <option value="discus">Cichlidae</option>
+      <option value="discus">Siluriformes</option>
+      <option value="discus">Gobiidae</option>
+      <option value="discus">Potamotrygonide</option>
+      <option value="discus">Tetraodontidae</option>
+
+
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="available_quantity">STATUS</label>  
+  <div class="col-md-4">
+  <input id="available_quantity" name="status" placeholder="Status" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+
+
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="comment">PRICE</label>  
+  <div class="col-md-4">
+  <input id="comment" name="price" placeholder="PRICE" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+<!-- Image Field-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="filebutton">IMAGE</label>
+  <div class="col-md-4">
+    <input id="image" name="image" class="input-file" type="file" >
+  </div>
+</div>
+<input type="submit" value="Submit">
+
+</fieldset>
+</form>

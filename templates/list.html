@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+         
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Fish Name</th>
+        <th>Description</th>
+        <th>Fish Breed</th>
+        <th>Price</th>
+        <th>Image</th>
+        <!-- <th>Edit</th> -->
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in data %}
+      <tr>
+        <td>{{i.fname}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.breed}}</td>
+        <td>{{i.price}}</td>
+        <td><img src="/media/{{i.image}}" height="100" ></img></td>
+        <td><a href="/delete1/{{i.id}}">Delete</td></a>
+        <!-- <td>{{i.edit}}</td>
+        <td>{{i.breed}}</td> -->
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
